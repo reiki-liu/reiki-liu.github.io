@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>回答フォーム</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="招待状の回答フォーム">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+<section class="section active" id="replyform">
+<div class="contents full-height">
+<h2 class="title">回答フォーム</h2>
+<div id="form-area">
+<p class="drequired">*は必須項目です</p>
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSez3VzVla0gijmDrW7gQr_73HrO_P5nIkWsDuonVSXozu1YcA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+<label class="required" style="text-align:center;">いずれかをお選びください</label>
+<div class="radio-group">
+<label><input type="radio" name="entry.1952762187" value="出席" required>ご出席</label>
+<label><input type="radio" name="entry.1952762187" value="欠席" required>ご欠席</label>
+</div>
+<label class="required">氏名</label>
+<input type="text" name="entry.464587898" required>
+<label class="required">ふりがな</label>
+<input type="text" name="entry.184102308" required>
+<label>アレルギー等があれば記載ください</label>
+<textarea name="entry.1278492771" rows=1></textarea>
+<label>メッセージ</label>
+<textarea name="entry.825023379" placeholder="自由に入力ください" rows=3></textarea>
+<input type="hidden" name="fvv" value="1">
+<input type="hidden" name="fbzx" value="-7425778748280398314">
+<input type="hidden" name="pageHistory" value="0">
+<button type="submit">送信</button>
+</form>
+</div>
+<div id="thanks" style="display:none;">
+  送信ありがとうございました！
+</div>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+<script>
+let submitted = false;
+
+window.addEventListener("load", function () {
+  const iframe = document.querySelector('iframe[name="hidden_iframe"]');
+
+  iframe.onload = function () {
+    if (submitted) {
+      document.getElementById("form-area").style.display = "none";
+      document.getElementById("thanks").style.display = "block";
+    }
+  };
+});
+</script>
+</div>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>

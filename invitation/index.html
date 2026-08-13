@@ -2,10 +2,213 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>結婚式招待状</title>
+<title>招待状</title>
+<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ここにサイト説明を入れます">
+<meta name="description" content="結婚式の招待状">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  これは招待状です。
+
+<nav id="header-menu">
+<ul>
+<li><a href="#top">招待状</a></li>
+<li><a href="#npc">紹介</a></li>
+<li><a href="#date">日程</a></li>
+<li><a href="#address">会場</a></li>
+<li><a href="#special">ギャラリー</a></li>
+<li><a href="#form">回答フォーム</a></li>
+</ul>
+</nav>
+
+<main>
+<section id="top" class="section">
+<div class="contents full-height">
+<div class="bg1" id="letter">
+<script>
+//async function makeLetter(token) {
+//const url = "https://script.google.com/macros/s/AKfycbwDbUDE3asW1gz3IIUzrErV74yveViRPi2xo_RGGYeI5FPsNpL73SKFj9lmXN-UDC2N/exec?token="+token;
+//const response = await fetch(url);
+//const data = await response.json();
+const textLines = [
+//data["surname"] + data["name"] + " 様",
+//"",
+"拝啓　残夏の候",
+"健やかにお過ごしのこととお慶び申し上げます",
+"",
+"このたび私たちは結婚式を挙げることとなりました",
+"つきましては　日頃お世話になっている皆さまに",
+"お集まりいただき",
+"ささやかな披露宴を催したいと存じます",
+"ご多用の折　誠に恐縮ですが",
+"ぜひご列席いただきたく　ご案内申し上げます",
+"敬白",
+"令和8年8月吉日",
+"",
+"劉　霊輝",
+"樋口　麻衣",
+];
+const letter = document.getElementById("letter");
+const textElements = [];
+textLines.forEach(() => {
+const line = document.createElement("div");
+line.className = "line";
+const text = document.createElement("div");
+text.className = "diag-text";
+line.appendChild(text);
+letter.appendChild(line);
+textElements.push(text);
+});
+let index = 0;
+function showNextLine() {
+if (index < textLines.length) {
+const el = textElements[index];
+el.textContent = textLines[index];
+el.classList.add("up-letter");
+index++;
+if ( ! textLines[index] ) {
+setTimeout(showNextLine, 200);
+} else {
+setTimeout(showNextLine, 900);
+}
+}
+}
+setTimeout(showNextLine, 600);
+//}
+//makeLetter("test");
+</script>
+<img class="letter-img" src="images/letter.png" alt="">
+</div>
+</div>
+<div class="contents">
+<h2 class="bear">概要</h2>
+<div class="description-box">
+<p>その手紙があなたの元に届いたのは、うだるような暑い日だった。</p>
+<p>白い封筒を開けば、出てくるのは一枚の便箋。</p>
+<p>――結婚式の招待状。</p>
+<p>型にはまったよそ行きの言葉たちが並ぶその手紙は、その堅さの合間にどこか弾むような空気を漂わせていた。</p>
+<p>結びに書かれた名前まで読み終え、顔を上げたあなたに去来したのは、喜びだろうか。それとも驚きだろうか。</p>
+<p>その感情のたどり着く先を確かめる日は、じきに訪れる。</p>
+<hr>
+<p>日時：2026年10月24日 16:00</p>
+<p>人数：20名前後</p>
+<p>時間：3時間～</p>
+<p>ロスト率：低</p>
+<p>事前情報：あなたは結婚式の参列者である</p>
+</div>
+</div>
+</section>
+
+<section id="npc" class="section">
+<div class="contents">
+
+  <h2 class="bear">人物紹介</h2>
+
+  <div class="npc up">
+    <img src="images/icon_himawari.png" alt="">
+    <span class="icon-menu-point">新郎</span>
+    <div class="text">
+	<p>劉 霊輝 = そらまめから発芽したひまわり</p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+    </div>
+  </div>
+
+  <div class="npc up">
+    <img src="images/icon_ezo.png" alt="">
+    <span class="icon-menu-point">新婦</span>
+    <div class="text">
+	<p>樋口 麻衣 = 人の皮を被ったクマ</p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+<section id="date" class="section">
+<div class="contents">
+    <!--div class="date-box">
+      <h2><span class="fade-in-text">受付</span></h2>
+      <h3><span class="up date">15:00～16:00 </span></h3>
+    </div-->
+    <div class="date-box">
+      <h2><span class="fade-in-text">挙式</span></h2>
+      <h3><span class="up date">2026.10.24 sat</span></h3>
+      <h3><span class="up date">16:00~16:30 </span></h3>
+      <span class="hosoku up">受付　15:00～16:00</span>
+    </div>
+    <div class="date-box">
+      <h2><span class="fade-in-text">披露宴</span></h2>
+      <h3><span class="up date">2026.10.24 sat</span></h3>
+      <h3><span class="up date">16:30~19:00 </span></h3>
+    </div>
+</div>
+</section>
+<section id="address" class="section">
+<div class="contents">
+<div class="address-data">
+<h2><span class="hosoku">ACCESS</span><span class="fade-in-text">アクセス</span></h2>
+<dl class="table">
+<dt>挙式会場</dt><dd>L2126</dd>
+<dt>住所</dt><dd>東京都港区南青山4-21-26 RUELLE青山</dd>
+<dt>電話番号</dt><dd>0120-963-712</dd>
+</dl>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.5408620089634!2d139.7154594!3d35.6636822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b91ffb9f70f%3A0x2290c7679467566a!2sL2126!5e0!3m2!1sja!2sjp!4v1786106597666!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+</div>
+</section>
+<section id="special" class="section">
+<div class="contents">
+<div class="slide5">
+<div class="slide img1"><img src="images/soto.jpg" alt=""></div>
+<div class="slide"><img src="images/azisai.jpg" alt=""></div>
+<div class="slide"><img src="images/situnai.jpg" alt=""></div>
+<div class="slide"><img src="images/dice.jpg" alt=""></div>
+<div class="slide-indicators"></div>
+</div>
+</div>
+</section>
+<section id="form" class="section">
+<div class="contents">
+<div class="ui-tools-cta1-parts inview">
+<h2>出欠回答</h2>
+<p>お手数ですが下記お日にち迄に出欠情報のご連絡をお願い申し上げます</p>
+<h3>2026年09月13日 （日）</h3>
+<p class="btn1"><a href="form.html"><i class="fa-solid fa-envelope"></i>回答フォーム</a></p>
+</div>
+<div class="dicelogo up">
+<img src="images/dicelogo.png">
+<dd class="up">Thank you</dd>
+</div>
+</div>
+</section>
+<div class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></div>
+</main>
+<div id="menubar_hdr">
+<span></span><span></span><span></span>
+</div>
+<div id="menubar">
+<nav>
+<ul>
+<li><a href="#top">トップ</a></li>
+<li><a href="#npc">NPC紹介</a></li>
+<li><a href="#date">日付</a></li>
+<li><a href="#address">会場</a></li>
+<li><a href="#special">ギャラリー</a></li>
+<li><a href="#form">回答フォーム</a></li>
+</ul>
+</nav>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+<script src="js/jquery.inview_set.js"></script>
+<script src="js/main.js"></script>
 </body>
+</html>
