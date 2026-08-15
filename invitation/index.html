@@ -53,19 +53,11 @@ line.appendChild(text);
 letter.appendChild(line);
 textElements.push(text);
 });
-function fitText(el) {
-let size = parseFloat(getComputedStyle(el).fontSize);
-while (el.scrollWidth > el.clientWidth && size > 8) {
-size -= 0.5;
-el.style.fontSize = size + "px";
-}
-}
 let index = 0;
 function showNextLine() {
 if (index < textLines.length) {
 const el = textElements[index];
 el.textContent = textLines[index];
-fitText(el);
 el.classList.add("up-letter");
 index++;
 if ( ! textLines[index] ) {
@@ -109,11 +101,18 @@ setTimeout(showNextLine, 600);
     <span class="icon-menu-point">新郎</span>
   </div>
   <div class="text up">
-	<p>劉 霊輝 = そらまめから発芽したひまわり</p>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
+	<p><span class="strong">劉 霊輝</span> = そらまめから発芽したひまわり</p>
+	<p>性別&nbsp;男／年齢&nbsp;32歳</p>
+	<p>職業&nbsp;エンジニア／出身&nbsp;東京</p>
+	<p>共鳴感情：<br>
+	表&nbsp;本能（欲望）<br>
+	裏&nbsp;甘え（関係）<br>
+	ルーツ&nbsp;幸福（情念）</p>
+	<p>「やれば何とかなるんじゃないですかね」<br>
+	「まあ、りゅうくんは最強なんで」</p>
+	<p>眼鏡をかけた黒髪の細身の男性。明るく楽観的な性格。
+	眼鏡キャラは頭がいいと相場が決まっているため、相応に頭がいい。
+	しかし、深く考えるのは苦手で、その場のノリと勢いで突き進む。</p>
   </div>
 
   <div class="npc up">
@@ -121,11 +120,15 @@ setTimeout(showNextLine, 600);
     <span class="icon-menu-point">新婦</span>
   </div>
   <div class="text up">
-	<p>樋口 麻衣 = 人の皮を被ったクマ</p>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
+	<p><span class="strong">樋口 麻衣</span> = 人の皮を被ったクマ</p>
+	<p>性別&nbsp;女／年齢&nbsp;29歳</p>
+	<p>職業&nbsp;SE／出身&nbsp;福岡</p>
+	<p>STR&nbsp;35&emsp;CON&nbsp;65&emsp;POW&nbsp;80&emsp;DEX&nbsp;40&emsp;SIZ&nbsp;50&emsp;APP&nbsp;55&emsp;INT&nbsp;65&emsp;EDU&nbsp;75&emsp;幸運&nbsp;60</p>
+	<p>意味のある場所&nbsp;ココフォリア</p>
+	<p>「あー、それはそう(適当)」<br>
+	「まあ言ったからにはやりますけれど……」</p>
+	<p>セミロングの寡黙な女性。
+人を寄り付かせなさそうな雰囲気とは裏腹に話してみると割とゲラ。マイペースで受け答えが適当なこともしばしばだが、言ったことをやり通す責任感は人一倍強い。 </p>
   </div>
 
 </div>
@@ -165,8 +168,9 @@ setTimeout(showNextLine, 600);
 <div class="slide5">
 <div class="slide img1"><img src="images/soto.jpg" alt=""></div>
 <div class="slide"><img src="images/azisai.jpg" alt=""></div>
-<div class="slide"><img src="images/situnai.jpg" alt=""></div>
+<!--div class="slide"><img src="images/situnai.jpg" alt=""></div-->
 <div class="slide"><img src="images/dice.jpg" alt=""></div>
+<div class="slide"><img src="images/playing.jpg" alt=""></div>
 <div class="slide-indicators"></div>
 </div>
 </div>

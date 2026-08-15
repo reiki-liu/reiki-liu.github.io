@@ -442,6 +442,12 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
 	line-height: 1;
 	white-space: nowrap;
 }
+@media(max-width:490px){#top .diag-text{font-size: 0.95em;}#top .line{height:30px;padding-top:12px;}}
+@media(max-width:465px){#top .diag-text{font-size: 0.9em;}#top .line{height:28px;padding-top:11px;}}
+@media(max-width:440px){#top .diag-text{font-size: 0.85em;}#top .line{height:26px;padding-top:10px;}}
+@media(max-width:415px){#top .diag-text{font-size: 0.8em;}#top .line{height:24px;padding-top:9px;}}
+@media(max-width:390px){#top .diag-text{font-size: 0.75em;}#top .line{height:22px;padding-top:8px;}}
+@media(max-width:365px){#top .diag-text{font-size: 0.7em;}#top .line{height:20px;padding-top:7px;}}
 
 #top .bg1 {
 	background: #F7F3E8; /* 少し黄みのある紙色 */
@@ -457,9 +463,9 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
 
 #top .letter-img {
 	position: absolute;
-	right: -4vw;
-	bottom: -3vw;
-	width: 40vw;
+	right: -14%;
+	bottom: -7%;
+	width: 40%;
 	max-width: 220px;
 	opacity: 1.0;
 	pointer-events: none;
@@ -536,8 +542,13 @@ hr {
 	margin-bottom: var(--global-space);	/*下に空けるスペース。冒頭のglobal-spaceを読み込む。*/
 }
 #npc .text {
-	margin: 20px 40px;
+	margin: 20px 10%;
+	text-align: left;
+}
+.strong {
+	font-size: 1.4rem;
 	text-align: center;
+//	font-weight: bold;
 }
 .npc .icon-menu-point {
 	text-align: center;
